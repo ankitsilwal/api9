@@ -76,6 +76,7 @@ export class FacebookController {
     @Request() req: any
   ) {
     const authorId = req.user.sub;
-    return await this.facebookservice.deletebyid(facebookId, authorId);
+    const deletepostt= await this.facebookservice.deletebyid(facebookId, authorId);
+    return {message:"Post Deleted"}
   }
 }
